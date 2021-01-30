@@ -1,0 +1,41 @@
+{
+  "name": "rule-validation-api",
+  "version": "1.0.0",
+  "description": "Rule-validation API (Technical Test)",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev": "nodemon index.js --exec babel-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix --ignore-path .eslintignore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chidieberejoel/rule-validation-api.git"
+  },
+  "author": "Chidiebere Joel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chidieberejoel/rule-validation-api"
+  },
+  "homepage": "https://github.com/chidieberejoel/rule-validation-api#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.18.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "winston": "^3.3.3"
+  }
+}
