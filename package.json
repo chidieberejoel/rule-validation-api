@@ -8,12 +8,13 @@
     "node": "14.2.0"
   },
   "scripts": {
+    "start": "babel-node index.js",
     "dev": "nodemon index.js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build . -s --ignore node_modules",
     "build": "npm run clean && npm run build-babel",
-    "start": "npm run build && node ./build/index.js",
+    "heroku_start": "npm run build && node ./build/index.js",
     "lint": "eslint . --fix --ignore-path .eslintignore"
   },
   "repository": {
@@ -29,7 +30,6 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "babel-loader": "^8.2.2",
     "eslint": "^7.18.0",
@@ -40,7 +40,7 @@
   "dependencies": {
     "@babel/cli": "^7.12.10",
     "@babel/polyfill": "^7.12.1",
-    "@hapi/joi": "^17.1.1",
+    "@babel/preset-env": "^7.12.11",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
