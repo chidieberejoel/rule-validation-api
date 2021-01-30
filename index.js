@@ -53,10 +53,9 @@ function startServer({ port = process.env.PORT } = {}) {
       const originalClose = server.close.bind(server);
 
       // then overwrite it to return a Promise
-      server.close = () =>
-        new Promise(() => {
-          originalClose();
-        });
+      server.close = () => new Promise(() => {
+        originalClose();
+      });
     });
     // Setup handlers for different process termination events
     setupExitHandlers(server);

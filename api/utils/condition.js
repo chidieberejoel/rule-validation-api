@@ -6,7 +6,7 @@ const getConditions = (payload) => {
 
   const fieldValue = data[rule.field];
 
-  // Conditions for validating the rule ====
+  // Conditions for validating the rule
   const eq = condition === "eq" && fieldValue == condition_value;
   const neq = condition === "neq" && fieldValue < condition_value;
   const gt = condition === "gt" && fieldValue > condition_value;

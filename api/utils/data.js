@@ -4,25 +4,28 @@ const getData = (payload) => {
   const { data, rule } = payload;
   const { field } = rule;
 
-  // 2b & 2d =====
+  const err = {
+    status: "error",
+    data: null,
+  };
+
+  // 2c & 2e - Check data field type
   if (
     typeof data !== "object"
     && data.constructor !== Array
     && typeof data !== "string"
   ) {
     return {
-      message: "data should be JSON object, array or string",
-      status: "error",
-      data: null,
+      ...{ message: "data should be JSON object, array or string." },
+      ...err,
     };
   }
 
-  // 2g =====
+  // 2g - Check for missing field in rule object
   if (!data[field]) {
     return {
-      message: `field ${field} is missing from data.`,
-      status: "error",
-      data: null,
+      ...{ message: `field ${field} is missing from data.` },
+      ...err,
     };
   }
   return "valid";

@@ -1,21 +1,23 @@
 import logger from "../config/winstonlog";
+import config from "../config";
 
 class GetIndex {
   static async index(req, res) {
-    const userData = {
+    const data = {
       name: "Chidiebere Joel",
       github: "@chidieberejoel",
       email: "chidiebereyjoel@gmail.com",
-      mobile: "08168670324",
+      mobile: config.mobile,
+      twitter: "@joelc__",
     };
 
     try {
       res.status(200).send({
         message: "My Rule-Validation API",
         status: "success",
-        data: userData,
+        data,
       });
-      logger.info("GET '/' visited");
+      logger.info("GET '/' accessed");
     } catch (err) {
       res.status(500).send(err);
       logger.warn(`Error: ${err}`);
