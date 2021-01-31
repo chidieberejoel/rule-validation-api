@@ -1,14 +1,14 @@
-import logger from "../config/winstonlog";
-import ruleValidator from "../utils/rule";
-import conditionValidator from "../utils/condition";
-import dataValidator from "../utils/data";
+const logger = require("../config/winstonlog");
+const ruleValidator = require("../utils/rule");
+const conditionValidator = require("../utils/condition");
+const dataValidator = require("../utils/data");
 
 class PostValidatorApi {
   static async validatorApi(req, res) {
     const { body } = req;
     const { rule, data } = body;
     const errCode = 400;
-    const succCode = 200;
+    const successCode = 200;
 
     try {
       const getRule = ruleValidator(body);
@@ -32,7 +32,7 @@ class PostValidatorApi {
       if (getCondition === "valid") {
         const err = { error: false };
 
-        return res.status(succCode).send({
+        return res.status(successCode).send({
           message: `field ${rule.field} successfully validated.`,
           status: "success",
           data: { ...err, ...validation },
@@ -55,4 +55,4 @@ class PostValidatorApi {
   }
 }
 
-export default PostValidatorApi;
+module.exports = PostValidatorApi;

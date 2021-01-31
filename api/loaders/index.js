@@ -1,10 +1,10 @@
-import express from "express";
-import cors from "cors";
-import helmet from "helmet";
-import logger from "../config/winstonlog";
-import getRoutes from "../routes";
+const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const logger = require("../config/winstonlog");
+const getRoutes = require("../routes");
 
-export default {
+module.exports = {
   init: (app) => {
     app.use(cors());
     app.use(helmet());
@@ -16,7 +16,7 @@ export default {
       res.status(500);
       res.render(
         "There was an Error processing your request. Something's broken! Check your data and try again",
-        { error: err }
+        { error: err },
       );
       next();
     });

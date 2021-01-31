@@ -31,4 +31,4 @@ const getData = (payload) => {
   return "valid";
 };
 
-export default getData;
+module.exports = getData;

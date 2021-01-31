@@ -1,5 +1,4 @@
-// var appRoot = require('app-root-path');
-import winston from "winston";
+const winston = require("winston");
 
 // define the custom settings for each transport (file, console)
 
@@ -51,4 +50,4 @@ logger.stream = {
   },
 };
 
-export default logger;
+module.exports = logger;

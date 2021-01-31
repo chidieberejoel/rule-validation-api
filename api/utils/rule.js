@@ -87,4 +87,4 @@ const getRule = (payload) => {
   return "valid";
 };
 
-export default getRule;
+module.exports = getRule;

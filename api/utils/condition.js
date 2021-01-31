@@ -19,4 +19,4 @@ const getConditions = (payload) => {
   return "failed";
 };
 
-export default getConditions;
+module.exports = getConditions;

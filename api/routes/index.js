@@ -1,6 +1,6 @@
-import express from "express";
-import index from "../controllers/indexController";
-import validator from "../controllers/validatorController";
+const express = require("express");
+const index = require("../controllers/indexController");
+const validator = require("../controllers/validatorController");
 
 const getRoutes = () => {
   const router = new express.Router();
@@ -15,4 +15,4 @@ const getRoutes = () => {
   return router;
 };
 
-export default getRoutes;
+module.exports = getRoutes;

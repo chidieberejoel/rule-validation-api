@@ -1,6 +1,6 @@
-import app from "./api";
-import config from "./api/config";
-import logger from "./api/config/winstonlog";
+const app = require("./api");
+const config = require("./api/config");
+const logger = require("./api/config/winstonlog");
 
 /**
  *
@@ -41,7 +41,7 @@ function setupExitHandlers(server) {
 function startServer({ port = process.env.PORT } = {}) {
   return new Promise((resolve) => {
     // app.listen returns a server object
-    const server = app.listen(port || 3000, (event) => {
+    const server = app.listen(port || 5000, (event) => {
       if (event) {
         logger.info(event);
       } else {
@@ -49,7 +49,7 @@ function startServer({ port = process.env.PORT } = {}) {
       }
 
       // wrap .close method of server object with a promise
-      // first we save a binding of the original close(), piggy Backing 🤐
+      // first we save a binding of the original close(),
       const originalClose = server.close.bind(server);
 
       // then overwrite it to return a Promise
